@@ -16,7 +16,7 @@ export default function Post() {
   return (
     <>
       <Seo />
-      <div className='p-8'>
+      <div className='p-8 bg-black'>
         <MDXProvider components={components}>
           <IndexMd />
         </MDXProvider>
