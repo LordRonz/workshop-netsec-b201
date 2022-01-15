@@ -16,10 +16,12 @@ export default function Post() {
   return (
     <>
       <Seo />
-      <div className='py-8 px-20 bg-black space-y-4'>
-        <MDXProvider components={components}>
-          <IndexMd />
-        </MDXProvider>
+      <div className='py-8 bg-black space-y-4 flex justify-center'>
+        <article className='prose dark:prose-invert'>
+          <MDXProvider components={components}>
+            <IndexMd />
+          </MDXProvider>
+        </article>
       </div>
     </>
   );
