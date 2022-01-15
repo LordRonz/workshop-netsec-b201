@@ -1,4 +1,5 @@
 import Button from '@/components/buttons/Button';
+import ArrowLink from '@/components/links/ArrowLink';
 import CustomLink from '@/components/links/CustomLink';
 
 # Modul Workshop Network and Security Lab B201
@@ -15,13 +16,13 @@ Linux System administration merupakan perintah-perintah dalam mengoperasikan sis
 
 Berikut ini adalah beberapa dari command-command linux yang penting untuk diketahui.
 
-### man
+### > man
 
-<CustomLink href='https://man7.org/linux/man-pages/man1/man.1.html'>
+<ArrowLink href='https://man7.org/linux/man-pages/man1/man.1.html'>
   reference
-</CustomLink>
+</ArrowLink>
 
-Command man merupakan command untuk menampilkan manual page dari system.
+Command `man` merupakan command untuk menampilkan manual page dari system.
 Setiap argumen page biasanya adalah nama dari program, fungsi (biasanya bahasa C) atau utilitas.
 Kemudian manual page untuk program tersebut akan ditampilkan. Sebuah section apabila diberikan maka akan membuat man hanya menampilkan bagian section tersebut.
 
@@ -50,6 +51,30 @@ Command dibawah akan menampilkan manual dari fungsi `fork` dalam bahasa C
 ```bash
 man 3 fork
 ```
+
+### > pwd
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/pwd.1.html'>
+  reference
+</ArrowLink>
+
+Command `pwd` atau **p**rint **w**orking **d**irectory akan menampilkan nama dari direktori terkini dari terminal yang digunakan untuk memanggil command ini
+
+Contoh penggunaan:
+
+```bash
+pwd
+```
+
+Maka outputnya kira-kira seperti `/home/amogus/HOMEWORK`
+
+### > ls
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/ls.1.html'>
+  reference
+</ArrowLink>
+
+Command `ls` atau list ini
 
 ```js
 for (var i = 1; i <= 20; i++) {
