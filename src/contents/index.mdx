@@ -25,7 +25,20 @@ Command man merupakan command untuk menampilkan manual page dari system.
 Setiap argumen page biasanya adalah nama dari program, fungsi (biasanya bahasa C) atau utilitas.
 Kemudian manual page untuk program tersebut akan ditampilkan. Sebuah section apabila diberikan maka akan membuat man hanya menampilkan bagian section tersebut.
 
-Daftar dibawah merupakan
+Daftar dibawah merupakan section number dari manual dan diikuti dengan tipe halaman yang ada di dalamnya.
+
+| Section Number | Type                                                                            |
+| -------------- | ------------------------------------------------------------------------------- |
+| 1              | Executable programs or shell commands                                           |
+| 2              | System calls (functions provided by the kernel)                                 |
+| 3              | Library calls (functions within program libraries)                              |
+| 4              | Special files (usually found in /dev)                                           |
+| 5              | File formats and conventions, e.g. /etc/passwd                                  |
+| 6              | Games                                                                           |
+| 7              | Miscellaneous (including macro packages and conventions), e.g. man(7), groff(7) |
+| 8              | System administration commands (usually only for root)                          |
+| 9              | Kernel routines [Non standard]                                                  |
+
 This is a list in markdown:
 
 - One
