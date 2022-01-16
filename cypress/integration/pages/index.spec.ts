@@ -6,6 +6,9 @@ describe('Index Page', () => {
   });
 
   it('should display correct heading', () => {
-    cy.get('h1').should('contain', 'Modul Workshop Network and Security Lab B201');
+    cy.get('h1').should(
+      'contain',
+      'Modul Workshop Network and Security Lab B201'
+    );
   });
 });

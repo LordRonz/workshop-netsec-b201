@@ -68,6 +68,26 @@ pwd
 
 Maka outputnya kira-kira seperti `/home/amogus/HOMEWORK`
 
+### > cd
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/cd.1.html'>
+  reference
+</ArrowLink>
+
+Command `cd` atau _change directory_ berfungsi untuk menavigasi atau berpindah pindah lokasi direktori pada sistem file di Linux. Contoh penggunaannya adalah sebagai berikut
+
+```bash
+cd Documents
+```
+
+Maka kita akan bergerak maju satu level ke direktori bernama Documents. Kita juga bisa bergerak mundur dengan menggunakan `..`
+
+```bash
+cd ../
+```
+
+Maka kita kembali ke direktori sebelumnya.
+
 ### > ls
 
 <ArrowLink href='https://man7.org/linux/man-pages/man1/ls.1.html'>
@@ -91,3 +111,28 @@ ls -lAh
 ```
 
 Outputnya kira-kira seperti ini ![Output dari ls -lAh](/contents/ls-2.png)
+
+### Linux file permission
+
+<ArrowLink href='https://wiki.archlinux.org/title/File_permissions_and_attributes'>
+  reference
+</ArrowLink>
+
+Pada section sebelumnya apabila kita melakukan command `ls -l` maka kita dapat melihat file permission atau file mode yang mana berguna untuk meregulasi level interaksi pada file atau direktori yang dapat dilakukan oleh system. Ini mirip seperti access control pada windows, namun lebih advanced. Inilah mengapa linux sangat secure (dengan catatan penggunanya menggunakan dengan benar, tentu saja).
+
+Pada output dari `ls` sebelumnya, terdapat kolom drwxrwxrwx, penjelasannya adalah sebagai berikut.
+
+| `d`                                                                                                                              | `rwx`                                           | `rwx`                                        | `rwx`                                        |
+| -------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------- | -------------------------------------------- | -------------------------------------------- |
+| Tipe file, secara teknis bukan termasuk dari file permission, kalau regular file nilainya adalah `-`, apabila direktori maka `d` | Permission yang dimiliki oleh user pemilik file | Permission yang dimiliki oleh grup dari user | Permission yang dimiliki oleh user-user lain |
+
+Tiap-tiap dari permission `rwx` yang diatas dirincikan sebagai berikut:
+
+|                        | Karakter | Efek pada file                | Efek pada direktori                                                     |
+| ---------------------- | -------- | ----------------------------- | ----------------------------------------------------------------------- |
+| **Read permission**    | `-`      | File tidak dapat dibuka       | Isi direktori tidak dapat dilihat                                       |
+| **Read permission**    | `r`      | File dapat dibuka             | Isi direktori dapat dilihat                                             |
+| **Write permission**   | `-`      | File tidak dapat dimodifikasi | Isi direktori tidak dapat dimodifikasi                                  |
+| **Write permission**   | `w`      | File dapat dimodifikasi       | Isi direktori dapat dimodifikasi, seperti membuat file atau folder baru |
+| **Execute permission** | `-`      | File tidak dapat dieksekusi   | Direktori tidak dapat diakses dengan command `cd`                       |
+| **Execute permission** | `x`      | File dapat dieksekusi         | Direktori dapat diakses atau dibuka dengan command `cd`                 |
