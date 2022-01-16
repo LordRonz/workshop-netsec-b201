@@ -74,13 +74,20 @@ Maka outputnya kira-kira seperti `/home/amogus/HOMEWORK`
   reference
 </ArrowLink>
 
-Command `ls` atau list ini
+Command `ls` atau list ini berfungsi untuk menampilkan informasi dari file-file yang berada pada direktori tertentu (secara default adalah direktori terkini). Untuk penggunaan lengkapnya bisa dilihat di reference atau dengan command `man ls`.
 
-```js
-for (var i = 1; i <= 20; i++) {
-  if (i % 15 == 0) console.log('FizzBuzz');
-  else if (i % 3 == 0) console.log('Fizz');
-  else if (i % 5 == 0) console.log('Buzz');
-  else console.log(i);
-}
+Command dibawah akan menampilkan file-file yang tidak _hidden_ pada `pwd`.
+
+```bash
+ls
 ```
+
+Kira-kira outputnya seperti ini ![Output dari ls](/contents/ls-1.png)
+
+Apabila kita menggunakan argumen seperti `-l` maka outputnya akan lebih deskriptif, dan bila menggunakan `-A` maka outputnya akan menyertakan file yang berawalan dengan titik (.) alias hidden. Argumen `-h` akan mengubah tampilan ukuran file menjadi human readable. Biasanya saya menggunakan kombinasi 3 argumen tersebut:
+
+```bash
+ls -lAh
+```
+
+Outputnya kira-kira seperti ini ![Output dari ls -lAh](/contents/ls-2.png)
