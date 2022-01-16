@@ -198,3 +198,33 @@ Nano merupakan text editor default dari kebanyakan distro Linux. Saya menggunaka
 </ArrowLink>
 
 Command `less` digunakan untuk membaca file. Ada command yang mirip namun lebih primitif, `more`. _Less is more than more_.
+
+### > tail
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/tail.1.html'>
+  reference
+</ArrowLink>
+
+Command `tail` digunakan untuk mengoutputkan _n_ baris terakhir dari sebuah file. Default _n_ adalah 10.
+
+```bash
+tail fizzbuzz.hs
+```
+
+Kita juga bisa menggunakan _piping_, menggabungkannya dengan command `cat`.
+
+```bash
+cat fizzbuzz.hs | tail -5
+```
+
+### > head
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/head.1.html'>
+  reference
+</ArrowLink>
+
+Command `head` pada dasarnya sama saja dengan tail, namun dia mengoutputkan _n_ baris pertama dari sebuah file.
+
+```bash
+head fizzbuzz.hs
+```
