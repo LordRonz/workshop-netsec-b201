@@ -1,18 +1,12 @@
 import { MDXProvider } from '@mdx-js/react';
-import Image, { ImageProps } from 'next/image';
+import { NextPage } from 'next';
 
 import Seo from '@/components/Seo';
 import IndexMd from '@/contents/index.mdx';
 
-const ResponsiveImage = (props: ImageProps) => (
-  <Image alt={props.alt} layout='responsive' {...props} />
-);
+const components = {};
 
-const components = {
-  img: ResponsiveImage,
-};
-
-export default function Post() {
+const Home: NextPage = () => {
   return (
     <>
       <Seo />
@@ -25,4 +19,6 @@ export default function Post() {
       </div>
     </>
   );
-}
+};
+
+export default Home;
