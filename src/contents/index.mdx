@@ -228,3 +228,59 @@ Command `head` pada dasarnya sama saja dengan tail, namun dia mengoutputkan _n_ 
 ```bash
 head fizzbuzz.hs
 ```
+
+### > cp
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/cp.1.html'>
+  reference
+</ArrowLink>
+
+Command `cp` digunakan untuk menyalin file ke destinasi tertentu. Syntaxnya adalah `cp [SOURCE] [DESTINATION]`.
+
+```bash
+cp fizzbuzz.pl programs
+```
+
+Command diatas akan menyalin file `fizzbuzz.pl` ke direktori programs. Kita juga bisa menyalin dan merename sekaligus.
+
+```bash
+cp fizzbuzz.pl programs/fizzbuzzer.pl
+```
+
+Ketika kita ingin menyalin semua file dalam direktori, kita bisa menggunakan _wildcard_ `*`.
+
+```bash
+cp * programs
+```
+
+### > mv
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/mv.1.html'>
+  reference
+</ArrowLink>
+
+Command *m*o*v*e digunakan untuk memindahkan file. Ketika kita memindah file, kita sebenarnya juga merename file tersebut. Maka dari itu `mv` juga digunakan untuk merename sebuah file.
+
+```bash
+mv script.py scrap.py
+```
+
+Jika kita ingin merename beberapa karakter pada nama file kita bisa menggunakannya seperti ini.
+
+```bash
+mv script{1,69}.py
+```
+
+Command tersebut merename `script1.py` menjadi `script69.py`
+
+### > clear
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/clear.1.html'>
+  reference
+</ArrowLink>
+
+Command ini berguna untuk, membersihkan terminal.
+
+```bash
+clear
+```
