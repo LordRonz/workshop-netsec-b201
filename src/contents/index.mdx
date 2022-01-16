@@ -70,7 +70,7 @@ Maka outputnya kira-kira seperti `/home/amogus/HOMEWORK`
 
 ### > cd
 
-<ArrowLink href='https://man7.org/linux/man-pages/man1/cd.1.html'>
+<ArrowLink href='https://man7.org/linux/man-pages/man1/cd.1p.html'>
   reference
 </ArrowLink>
 
@@ -136,3 +136,215 @@ Tiap-tiap dari permission `rwx` yang diatas dirincikan sebagai berikut:
 | **Write permission**   | `w`      | File dapat dimodifikasi       | Isi direktori dapat dimodifikasi, seperti membuat file atau folder baru |
 | **Execute permission** | `-`      | File tidak dapat dieksekusi   | Direktori tidak dapat diakses dengan command `cd`                       |
 | **Execute permission** | `x`      | File dapat dieksekusi         | Direktori dapat diakses atau dibuka dengan command `cd`                 |
+
+### > touch
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/touch.1.html'>
+  reference
+</ArrowLink>
+
+Command `touch` sejatinya berfungsi untuk mengupdate waktu akses dan modifikasi pada file, namun, apabila file yang dituju tidak ada, maka file tersebut akan dibuat. Inilah mengapa command ini digunakan untuk membuat file baru. Berikut contoh penggunaannya.
+
+```bash
+touch yep.cock
+```
+
+Apabila file `yep.cock` ada, maka waktu akses dan modifiednya akan diupdate, sebaliknya maka akan dibuat file kosong dengan nama tersebut.
+
+### > cat
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/cat.1.html'>
+  reference
+</ArrowLink>
+
+Command con**cat**enate ini berfungsi untuk mengoutputkan isi dari file ke standard output.
+
+Apabila argumen nama file tidak diberikan maka `cat` akan membaca dari standard input kemudian langsung mengoutputkannya
+
+```bash
+cat
+```
+
+Command berikut akan mengoutputkan isi dari `main.c`
+
+```bash
+cat main.c
+```
+
+### > mkdir
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/mkdir.1.html'>
+  reference
+</ArrowLink>
+
+Command **m**a**k**e **dir**ectory ini berguna untuk... membuat direktori
+
+```bash
+mkdir ./Documents/projects
+```
+
+Command diatas akan membuat direktori projects yang ada didalam folder Documents.
+
+### > nano
+
+<ArrowLink href='https://wiki.archlinux.org/title/nano'>reference</ArrowLink>
+
+Nano merupakan text editor default dari kebanyakan distro Linux. Saya menggunakan <CustomLink href='https://archlinux.org/'>Arch Linux</CustomLink> dan nano merupakan text editor defaultnya.
+
+### > less
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/less.1.html'>
+  reference
+</ArrowLink>
+
+Command `less` digunakan untuk membaca file. Ada command yang mirip namun lebih primitif, `more`. _Less is more than more_.
+
+### > tail
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/tail.1.html'>
+  reference
+</ArrowLink>
+
+Command `tail` digunakan untuk mengoutputkan _n_ baris terakhir dari sebuah file. Default _n_ adalah 10.
+
+```bash
+tail fizzbuzz.hs
+```
+
+Kita juga bisa menggunakan _piping_, menggabungkannya dengan command `cat`.
+
+```bash
+cat fizzbuzz.hs | tail -5
+```
+
+### > head
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/head.1.html'>
+  reference
+</ArrowLink>
+
+Command `head` pada dasarnya sama saja dengan tail, namun dia mengoutputkan _n_ baris pertama dari sebuah file.
+
+```bash
+head fizzbuzz.hs
+```
+
+### > cp
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/cp.1.html'>
+  reference
+</ArrowLink>
+
+Command `cp` digunakan untuk menyalin file ke destinasi tertentu. Syntaxnya adalah `cp [SOURCE] [DESTINATION]`.
+
+```bash
+cp fizzbuzz.pl programs
+```
+
+Command diatas akan menyalin file `fizzbuzz.pl` ke direktori programs. Kita juga bisa menyalin dan merename sekaligus.
+
+```bash
+cp fizzbuzz.pl programs/fizzbuzzer.pl
+```
+
+Ketika kita ingin menyalin semua file dalam direktori, kita bisa menggunakan _wildcard_ `*`.
+
+```bash
+cp * programs
+```
+
+### > mv
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/mv.1.html'>
+  reference
+</ArrowLink>
+
+Command *m*o*v*e digunakan untuk memindahkan file. Ketika kita memindah file, kita sebenarnya juga merename file tersebut. Maka dari itu `mv` juga digunakan untuk merename sebuah file.
+
+```bash
+mv script.py scrap.py
+```
+
+Jika kita ingin merename beberapa karakter pada nama file kita bisa menggunakannya seperti ini.
+
+```bash
+mv script{1,69}.py
+```
+
+Command tersebut merename `script1.py` menjadi `script69.py`
+
+### > clear
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/clear.1.html'>
+  reference
+</ArrowLink>
+
+Command ini berguna untuk, membersihkan terminal.
+
+```bash
+clear
+```
+
+### > file
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/file.1.html'>
+  reference
+</ArrowLink>
+
+Command `file` digunakan untuk menampilkan tipe file, contohnya seperti berikut.
+
+```bash
+file a.out
+```
+
+### > rm
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/rm.1.html'>
+  reference
+</ArrowLink>
+
+Command `rm` digunakan untuk menghapus file maupun direktori. Command berikut akan menghapus file `main.py`.
+
+```bash
+rm main.py
+```
+
+Lalu untuk menghapus direktori beserta isinya kita menggunakan argumen `-r`. Berikut kita menghapus folder `poggers` beserta seluruh isinya.
+
+```bash
+rm -r poggers
+```
+
+Namun kita perlu berhati-hati, karena command ini akan benar-benar menghapus file, tidak memindahkannya ke Recycle Bin seperti OS sebelah. Malahan kita bisa saja tidak sengaja menghapus file sistem.
+
+### > sudo
+
+<ArrowLink href='https://man7.org/linux/man-pages/man8/sudo.8.html'>
+  reference
+</ArrowLink>
+
+Command *s*uper *u*ser _do_ digunakan untuk menjalankan command atau mengakses file yang dimiliki oleh _root user_. Jika kita memang sudah login dengan root user maka tidak perlu menggunakan command ini. Tapi sebaiknya kita jangan menggunakan root user untuk penggunaan sehari-hari karena alasan keamanan.
+
+```bash
+sudo cat /etc/shadow
+```
+
+Apabila kita mengeksekusi command diatas dengan menggunakan user non-root tanpa `sudo`, maka kita akan mendapat error _Permission Denied_.
+
+### > history
+
+<ArrowLink href='https://man7.org/linux/man-pages/man3/history.3.html'>
+  reference
+</ArrowLink>
+
+Command `history` digunakan untuk mengoutputkan history dari penggunaan shell command yang kita lakukan. Biasanya text history ini disimpan di `~/.bash_history` jika menggunakan bash atau `~/.zsh_history` jika menggunakan zsh.
+
+```bash
+history
+```
+
+Biasanya `history` ini akan sangat panjang, jadi penggunaannya bisa dikombinasikan dengan `tail` menggunakan pipe (|).
+
+```bash
+history | tail
+```
