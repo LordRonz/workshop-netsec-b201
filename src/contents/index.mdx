@@ -1,8 +1,11 @@
 import Button from '@/components/buttons/Button';
 import ArrowLink from '@/components/links/ArrowLink';
 import CustomLink from '@/components/links/CustomLink';
+import Accent from '@/components/Accent';
 
-# Modul Workshop Network and Security Lab B201
+<h1>
+  <Accent>Modul Workshop Network and Security Lab B201</Accent>
+</h1>
 
 ## A. Pengenalan Linux
 
@@ -348,3 +351,68 @@ Biasanya `history` ini akan sangat panjang, jadi penggunaannya bisa dikombinasik
 ```bash
 history | tail
 ```
+
+### _Stream redirection_
+
+<ArrowLink href='https://www.digitalocean.com/community/tutorials/an-introduction-to-linux-i-o-redirection'>
+  reference
+</ArrowLink>
+
+Terdapat 3 kategori dalam stream redirection, masing-masing untuk standard output, standard input, dan standard error.
+
+1. Standard Output
+
+`>` merupakan command yang digunakan untuk redirect dari standard output menuju file.
+
+```bash
+history | tail > yo.txt
+```
+
+Output dari `history` akan difilter oleh `tail`, lalu akan diberikan ke dalam file `yo.txt`.
+
+2. Standard Input
+
+`<` merupakan command yang digunakan untuk redirect dari file ke standard input dari sebuah command.
+
+```bash
+less < yo.txt
+```
+
+Output dari `history` akan difilter oleh `tail`, lalu akan diberikan ke dalam file `yo.txt`.
+
+3. Standard Error
+
+`<` merupakan command yang digunakan untuk redirect dari file ke standard input dari sebuah command.
+
+```bash
+ls % 2> wad00.txt
+```
+
+`ls %` akan mengakibatkan error, tapi pesan error tidak dioutputkan di terminal, melainkan dituliskan di file `wad00.txt`.
+
+Apabila kita menggunakan `>` maka kita akan melakukan overwrite pada file yang dituju. Jika tidak ingin overwrite, maka kita bisa menggunakan append dengan cara memberikan double bracket seperti `>>` untuk standard output, `<<` untuk standard input, dan `2>>` untuk standard error.
+
+### > grep
+
+<ArrowLink href='https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_02.html'>
+  reference
+</ArrowLink>
+
+Command `grep` mencari dari file input sebuah baris yang cocok dengan _pattern_ yang diberikan. Ketika baris yang cocok ditemukan, baris tersebut dicopy ke standard output(default) yang artinya baris tersebut diprint di terminal.
+
+```bash
+grep int main.c
+```
+
+Kita juga dapat menggunakan pipe
+
+```bash
+cat main.c | grep int
+```
+
+Kita juga dapat menggunakan <CustomLink href='https://en.wikipedia.org/wiki/Regular_expression'>Regular Expression</CustomLink>.
+
+````bash
+grep ^int main.c
+```ad
+````
