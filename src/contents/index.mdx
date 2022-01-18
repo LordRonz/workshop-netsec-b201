@@ -390,3 +390,26 @@ ls % 2> wad00.txt
 Apabila kita menggunakan `>` maka kita akan melakukan overwrite pada file yang dituju. Jika tidak ingin overwrite, maka kita bisa menggunakan append dengan cara memberikan double bracket seperti `>>` untuk standard output, `<<` untuk standard input, dan `2>>` untuk standard error.
 
 ### > grep
+
+<ArrowLink href='https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_02.html'>
+  reference
+</ArrowLink>
+
+Command `grep` mencari dari file input sebuah baris yang cocok dengan _pattern_ yang diberikan. Ketika baris yang cocok ditemukan, baris tersebut dicopy ke standard output(default) yang artinya baris tersebut diprint di terminal.
+
+```bash
+grep int main.c
+```
+
+Kita juga dapat menggunakan pipe
+
+```bash
+cat main.c | grep int
+```
+
+Kita juga dapat menggunakan <CustomLink href='https://en.wikipedia.org/wiki/Regular_expression'>Regular Expression</CustomLink>.
+
+````bash
+grep ^int main.c
+```ad
+````
