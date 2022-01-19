@@ -415,3 +415,51 @@ Kita juga dapat menggunakan <CustomLink href='https://en.wikipedia.org/wiki/Regu
 ```bash
 grep ^int main.c
 ```
+
+# > find
+
+<ArrowLink href='https://tldp.org/LDP/Bash-Beginners-Guide/html/sect_04_02.html'>
+  reference
+</ArrowLink>
+
+Command `find` digunakan untuk mencari file yang ada di sistem dengan menggunakan berbagai parameter dan filter. Untuk mencari file dengan nama, kita menggunakan syntax berikut
+
+```bash
+find -name "main"
+```
+
+Perlu diketahui perintah diatas bersifat case sensitive, sehingga mencari `main` itu berbeda dengan `Main`. Untuk mencari file tanpa memedulikan case, kita menggunakan opsi `-iname`.
+
+```bash
+find -iname "main"
+```
+
+Apabila kita mau mencari file yang **tidak** mengikuti pattern tertentu, kita bisa melakukan invert pada pencarian dengan opsi `-not`.
+
+```bash
+find -not -iname "main"
+```
+
+Atau kita bisa juga menggunakan tanda seru (!), dengan catatan diberikan backslash `\` karena tanda seru merupakan karakter khusus.
+
+```bash
+find \! -iname "main"
+```
+
+Selain menggunakan nama, kita juga bisa menggunakan tipe file, dengan parameter `-type`.
+
+Berikut adalah beberapa descriptor yang dapat kita gunakan untuk menentukan tipe file:
+
+- `f`: regular file
+- `d`: directory
+- `l`: symbolic link
+- `c`: character devices
+- `b`: block devices
+
+Kita dapat mencari semua file yang berakhiran `.py` dengan command berikut.
+
+```bash
+find -type f -name "*.py"
+```
+
+Selain itu masih banyak lagi tipe filter yang dapat kita lakukan, silahkan mengunjungi referensi untuk selengkapnya.
