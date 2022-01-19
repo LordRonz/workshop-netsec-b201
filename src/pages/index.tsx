@@ -1,10 +1,14 @@
 import { MDXProvider, MDXProviderComponentsProp } from '@mdx-js/react';
 import { NextPage } from 'next';
 
+import CustomCode, { Pre } from '@/components/content/CustomCode';
 import Seo from '@/components/Seo';
 import IndexMd from '@/contents/index.mdx';
 
-const components: MDXProviderComponentsProp = {};
+const components: MDXProviderComponentsProp = {
+  code: CustomCode,
+  pre: Pre,
+};
 
 const Home: NextPage = () => {
   return (
