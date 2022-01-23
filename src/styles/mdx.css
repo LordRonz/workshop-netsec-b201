@@ -1,122 +1,73 @@
-/**
- * Dracula Theme originally by Zeno Rocha [@zenorocha]
- * https://draculatheme.com/
- *
- * Ported for PrismJS by Albert Vallverdu [@byverdu]
- */
-
-code[class*='language-'],
-pre[class*='language-'] {
-  color: #f8f8f2;
-  background: none;
-  text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-  font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-  text-align: left;
-  white-space: pre;
-  word-spacing: normal;
-  word-break: normal;
-  word-wrap: normal;
-  line-height: 1.5;
-  -moz-tab-size: 4;
-  -o-tab-size: 4;
-  tab-size: 4;
-  -webkit-hyphens: none;
-  -moz-hyphens: none;
-  -ms-hyphens: none;
-  hyphens: none;
+.prose {
+  max-width: 50rem;
 }
 
-/* Code blocks */
-pre[class*='language-'] {
-  padding: 1em;
-  margin: 0.5em 0;
-  overflow: auto;
-  border-radius: 0.3em;
+.prose code:not(:where([data-code-type='code-block'])) {
+  @apply px-1 py-1 rounded-md border dark:border-gray-600;
 }
 
-:not(pre) > code[class*='language-'],
-pre[class*='language-'] {
-  background: #282a36;
+.prose a {
+  text-decoration: none;
 }
 
-/* Inline code */
-:not(pre) > code[class*='language-'] {
-  padding: 0.1em;
-  border-radius: 0.3em;
-  white-space: normal;
+.prose > ol > li > :last-child,
+.prose > ul > li > :last-child {
+  margin-bottom: 0;
+}
+.prose > ol > li > :first-child,
+.prose > ul > li > :first-child {
+  margin-top: 0;
 }
 
-.token.comment,
-.token.prolog,
-.token.doctype,
-.token.cdata {
-  color: #6272a4;
+.prose blockquote p:first-of-type::before,
+.prose blockquote p:last-of-type::after {
+  content: '';
 }
 
-.token.punctuation {
-  color: #f8f8f2;
+.prose blockquote {
+  border-style: solid;
+  border-width: 0 0 0 0.25rem;
+  border-image: linear-gradient(to top, #ff9a9a, #eb2754, #992323) 1;
 }
 
-.namespace {
-  opacity: 0.7;
+.prose hr {
+  border-style: solid;
+  border-width: 0 0 1px 0;
+  border-image: linear-gradient(to right, #00ff9480, #00e0f380, #00c4fd80) 1;
 }
 
-.token.property,
-.token.tag,
-.token.constant,
-.token.symbol,
-.token.deleted {
-  color: #ff79c6;
+.mdx.prose :where(h1, h2, h3, h4) {
+  scroll-margin-top: 100px;
+  position: relative;
+  display: block;
+  margin-right: 0.5rem;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 
-.token.boolean,
-.token.number {
-  color: #bd93f9;
+.mdx.prose :where(h1, h2, h3, h4) > a {
+  border-bottom: none;
 }
 
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-  color: #50fa7b;
+/** HASH ANCHOR */
+.hash-anchor {
+  @apply inset-y-0 w-full;
+  position: absolute;
+  background-image: none;
+  transition: none;
 }
 
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string,
-.token.variable {
-  color: #f8f8f2;
+.hash-anchor:hover {
+  background-image: linear-gradient(to right, #ff9a9a, #eb2754, #992323);
+  background-size: 100% 2px;
 }
 
-.token.atrule,
-.token.attr-value,
-.token.function,
-.token.class-name {
-  color: #f1fa8c;
+.hash-anchor:hover:after,
+.hash-anchor:focus:after {
+  visibility: visible;
 }
 
-.token.keyword {
-  color: #8be9fd;
-}
-
-.token.regex,
-.token.important {
-  color: #ffb86c;
-}
-
-.token.important,
-.token.bold {
-  font-weight: bold;
-}
-
-.token.italic {
-  font-style: italic;
-}
-
-.token.entity {
-  cursor: help;
+.hash-anchor:after {
+  @apply absolute -right-5 top-1/2 invisible text-lg text-primary-400 -translate-y-1/2 dark:text-primary-300;
+  content: '#';
 }

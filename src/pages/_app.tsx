@@ -1,4 +1,5 @@
 import '@/styles/globals.css';
+import '@/styles/codetheme.css';
 import '@/styles/mdx.css';
 
 import type { AppProps } from 'next/app';
