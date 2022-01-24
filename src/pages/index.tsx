@@ -2,6 +2,7 @@ import { MDXProvider, MDXProviderComponentsProp } from '@mdx-js/react';
 import { NextPage } from 'next';
 import { useEffect, useState } from 'react';
 
+import Comment from '@/components/content/Comment';
 import CustomCode, { Pre } from '@/components/content/CustomCode';
 import TableOfContents, {
   HeadingScrollSpy,
@@ -62,6 +63,9 @@ const Home: NextPage = () => {
             </div>
           </aside>
         </section>
+        <figure className='mt-12 py-8 px-20'>
+          <Comment />
+        </figure>
       </main>
     </>
   );
