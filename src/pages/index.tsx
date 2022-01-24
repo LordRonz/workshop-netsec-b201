@@ -25,15 +25,16 @@ const Home: NextPage = () => {
     toc?.reduce((min, item) => (item.level < min ? item.level : min), 10) ?? 0;
 
   useEffect(() => {
-    const headings = document.querySelectorAll('.mdx h1, .mdx h2, .mdx h3');
+    const headings = Array.from(
+      document.querySelectorAll('.mdx h1, .mdx h2, .mdx h3')
+    );
 
-    const headingArr: HeadingScrollSpy = [];
-    headings.forEach((heading) => {
+    const headingArr: HeadingScrollSpy = headings.map((heading) => {
       const id = heading.id;
       const level = +heading.tagName.replace('H', '');
       const text = heading.textContent + '';
 
-      headingArr.push({ id, level, text });
+      return { id, level, text };
     });
 
     setToc(headingArr);
