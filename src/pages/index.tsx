@@ -30,7 +30,7 @@ const Home: NextPage = () => {
     );
 
     const headingArr: HeadingScrollSpy = headings.map((heading) => {
-      const id = heading.id;
+      const { id } = heading;
       const level = +heading.tagName.replace('H', '');
       const text = heading.textContent + '';
 

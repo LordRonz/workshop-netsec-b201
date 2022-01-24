@@ -63,18 +63,17 @@ const TableOfContents = ({
         Table of Contents
       </h3>
       <div className='flex flex-col mt-4 space-y-2 text-sm'>
-        {toc
-          ? toc.map(({ id, level, text }) => (
-              <TOCLink
-                id={id}
-                key={id}
-                activeSection={activeSection}
-                level={level}
-                minLevel={minLevel}
-                text={text}
-              />
-            ))
-          : null}
+        {toc &&
+          toc.map(({ id, level, text }) => (
+            <TOCLink
+              id={id}
+              key={id}
+              activeSection={activeSection}
+              level={level}
+              minLevel={minLevel}
+              text={text}
+            />
+          ))}
       </div>
     </div>
   );
