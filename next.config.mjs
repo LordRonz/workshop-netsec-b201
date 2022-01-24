@@ -7,14 +7,18 @@ const withMDX = mdx({
   extension: /\.mdx?$/,
   options: {
     remarkPlugins: [],
-    rehypePlugins: [rehypeSlug, rehypePrism, [
-          rehypeAutolinkHeadings,
-          {
-            properties: {
-              className: ['hash-anchor'],
-            },
+    rehypePlugins: [
+      rehypeSlug,
+      rehypePrism,
+      [
+        rehypeAutolinkHeadings,
+        {
+          properties: {
+            className: ['hash-anchor'],
           },
-        ],],
+        },
+      ],
+    ],
   },
 });
 
