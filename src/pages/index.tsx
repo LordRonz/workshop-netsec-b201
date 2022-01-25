@@ -1,12 +1,16 @@
 import { MDXProvider, MDXProviderComponentsProp } from '@mdx-js/react';
 import { NextPage } from 'next';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
+import Accent from '@/components/Accent';
+import Button from '@/components/buttons/Button';
 import Comment from '@/components/content/Comment';
 import CustomCode, { Pre } from '@/components/content/CustomCode';
 import TableOfContents, {
   HeadingScrollSpy,
 } from '@/components/content/TableOfContents';
+import ArrowLink from '@/components/links/ArrowLink';
 import CustomLink from '@/components/links/CustomLink';
 import Seo from '@/components/Seo';
 import IndexMd from '@/contents/index.mdx';
@@ -16,6 +20,12 @@ const components: MDXProviderComponentsProp = {
   a: CustomLink,
   code: CustomCode,
   pre: Pre,
+  Accent,
+  Button,
+  Comment,
+  Image,
+  ArrowLink,
+  CustomLink,
 };
 
 const Home: NextPage = () => {

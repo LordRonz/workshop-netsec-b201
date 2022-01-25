@@ -1,8 +1,3 @@
-import Button from '@/components/buttons/Button';
-import ArrowLink from '@/components/links/ArrowLink';
-import CustomLink from '@/components/links/CustomLink';
-import Accent from '@/components/Accent';
-
 <h1>
   <Accent>Modul Workshop Network and Security Lab B201</Accent>
 </h1>
@@ -113,7 +108,9 @@ Command dibawah akan menampilkan file-file yang tidak _hidden_ pada `pwd`.
 ls
 ```
 
-Kira-kira outputnya seperti ini ![Output dari ls](/contents/ls-1.png)
+Kira-kira outputnya seperti ini
+
+<Image alt='Output dari ls' src='/contents/ls-1.png' width={897} height={228} />
 
 Apabila kita menggunakan argumen seperti `-l` maka outputnya akan lebih deskriptif, dan bila menggunakan `-A` maka outputnya akan menyertakan file yang berawalan dengan titik (.) alias hidden. Argumen `-h` akan mengubah tampilan ukuran file menjadi human readable. Biasanya saya menggunakan kombinasi 3 argumen tersebut:
 
@@ -121,7 +118,14 @@ Apabila kita menggunakan argumen seperti `-l` maka outputnya akan lebih deskript
 ls -lAh
 ```
 
-Outputnya kira-kira seperti ini ![Output dari ls -lAh](/contents/ls-2.png)
+Outputnya kira-kira seperti ini
+
+<Image
+  alt='Output dari ls -lAh'
+  src='/contents/ls-2.png'
+  width={1013}
+  height={820}
+/>
 
 ### Linux file permission
 
