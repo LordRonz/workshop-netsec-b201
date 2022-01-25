@@ -475,3 +475,13 @@ find -type f -name "*.py"
 ```
 
 Selain itu masih banyak lagi tipe filter yang dapat kita lakukan, silahkan mengunjungi referensi untuk selengkapnya.
+
+### > which
+
+<ArrowLink href='https://linux.die.net/man/1/which'>reference</ArrowLink>
+
+Command `which` akan mencetak path lengkap dari sebuah executable atau program yang akan dijalankan apabila argumen dari command ini diinputkan di shell prompt. Command ini akan mencari executable yang diberikan sebagai argumen di direktori yang terdapat pada environment variable _PATH_. _PATH_ merupakan env yang memberi tahu shell di direktori mana kita harus mencari sebuah executable.
+
+```bash
+which python
+```
