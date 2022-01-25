@@ -1,5 +1,6 @@
 import { MDXProvider, MDXProviderComponentsProp } from '@mdx-js/react';
 import { NextPage } from 'next';
+import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
 import Accent from '@/components/Accent';
@@ -22,6 +23,7 @@ const components: MDXProviderComponentsProp = {
   Accent,
   Button,
   Comment,
+  Image,
   ArrowLink,
   CustomLink,
 };
