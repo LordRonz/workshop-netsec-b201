@@ -49,7 +49,10 @@ const CustomCode = (props: React.ComponentPropsWithRef<'code'>) => {
             setTimeout(() => setIsCopied(false), 1500);
           }}
         >
-          <button className='hidden absolute top-2 right-2 p-2 text-lg rounded border border-gray-600 transition-colors md:block hover:bg-gray-700'>
+          <button
+            className='hidden absolute top-2 right-2 p-2 text-lg rounded border border-gray-600 transition-colors md:block hover:bg-gray-700'
+            aria-label='Copy button'
+          >
             {isCopied ? (
               <HiCheckCircle className='text-green-400' />
             ) : (
