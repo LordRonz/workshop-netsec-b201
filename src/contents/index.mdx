@@ -152,6 +152,78 @@ Tiap-tiap dari permission `rwx` yang diatas dirincikan sebagai berikut:
 | **Execute permission** | `-`      | File tidak dapat dieksekusi   | Direktori tidak dapat diakses dengan command `cd`                       |
 | **Execute permission** | `x`      | File dapat dieksekusi         | Direktori dapat diakses atau dibuka dengan command `cd`                 |
 
+### > chmod
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/chmod.1.html'>
+  reference
+</ArrowLink>
+
+Command `chmod` berfungsi untuk mengubah permission dari sebuah file. Kita dapat menggunakan symbolic maupun numeric mode untuk mengganti permission.
+
+Format dari syntax symbolic modenya adalah sebagai berikut.
+
+```bash
+chmod [OPTIONS] [ugoa…][-+=]perms…[,…] FILE...
+```
+
+Flag pertama yaitu `[ugoa]` menyatakan user dengan permission mana yang mesti diubah.
+
+- `u` Pemilik file
+- `g` Semua user yang ada di grup
+- `o` Semua user lain yang ada di luar grup
+- `a` Semua user, sama dengan `ugo`
+
+Jika flag user ini tidak diberikan maka default adalah `a`.
+
+Flag berikutnya adalah `[-+=]` menyatakan operasi yang akan menentukan permission apa yang akan dihapus, ditambah, atau diset.
+
+- `-` Menghapus permission
+- `+` Menambah permission
+- `=` Mengubah permission menjadi permission yang diberikan. Jika tidak ada argumen permission yang diberikan, semua permission dari user yang siberikan pada flag sebelumnya akan dihapus.
+
+Berikut beberapa contoh penggunaannya
+
+- Berikan pemilik file permission untuk mengeksekusi
+
+```bash
+chmod u+x a.out
+```
+
+- Hapus semua permission untuk membaca file untuk semua user selain pemilik file
+
+```bash
+chmod go-r a.out
+```
+
+- Berikan semua permission ke pemilik, read permission ke grup dan tidak ada permission untuk user lain.
+
+```bash
+chmod u=rwx,g=r,o= a.out
+```
+
+Untuk numeric mode, kita menggunakan angka yang merepresentasikan masing-masing permission.
+
+- `r` (read) = 4
+- `w` (write) = 2
+- `r` (execute) = 1
+- `-` (no permission) = 0
+
+Angka dari permission yang dimiliki oleh tiap kelas user direpresentasikan dengan jumlah atau _sum_ dari angka permission.
+
+Misalnya command berikut
+
+```bash
+chmod 744 a.out
+```
+
+Artinya, pemilik file memiliki permission read dan write karena 4 + 2 = 6. Lalu, grup dan user lain memiliki permission read saja.
+
+```bash
+chmod 400 ./*
+```
+
+Command diatas akan membuat semua file di dalam `pwd` menjadi memiliki permission read untuk owner saja, dan no permission untuk kelas user lain.
+
 ### > touch
 
 <ArrowLink href='https://man7.org/linux/man-pages/man1/touch.1.html'>
