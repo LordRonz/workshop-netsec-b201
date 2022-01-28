@@ -94,6 +94,12 @@ cd ../
 
 Maka kita kembali ke direktori sebelumnya.
 
+Kita juga bisa menggunakan argumen `-` untuk berpindah ke direktori sebelumnya.
+
+```bash
+cd -
+```
+
 ### > ls
 
 <ArrowLink href='https://man7.org/linux/man-pages/man1/ls.1.html'>
@@ -223,6 +229,24 @@ chmod 400 ./*
 ```
 
 Command diatas akan membuat semua file di dalam `pwd` menjadi memiliki permission read untuk owner saja, dan no permission untuk kelas user lain.
+
+> **Note:** Jangan sembarangan mengganti permission dari file sistem, silahkan kunjungi [link ini](https://serverfault.com/questions/364677/why-is-chmod-r-777-destructive) untuk penjelasannya.
+
+### > chown
+
+<ArrowLink href='https://man7.org/linux/man-pages/man1/chown.1.html'>
+  reference
+</ArrowLink>
+
+Command ini digunakan untuk mengganti owner dari sebuah file atau direktori.
+
+```bash
+chown root fizzbuzz.hs
+```
+
+Command di atas akan mengganti pemilik file fizzbuzz menjadi root.
+
+> **Note:** kita perlu root privilege untuk mengeksekusi command diatas
 
 ### > touch
 
@@ -404,13 +428,15 @@ rm -r poggers
 
 Namun kita perlu berhati-hati, karena command ini akan benar-benar menghapus file, tidak memindahkannya ke Recycle Bin seperti OS sebelah. Malahan kita bisa saja tidak sengaja menghapus file sistem.
 
+> **Note:** Perlu kehati-hatian dalam menggunakan command `rm`, karena user tidak akan ditanyakan konfirmasi, kecuali jika kita menggunakan flag `-i`. Flag seperti `-rf` akan menghapus file dan direktori secara rekursif tanpa ampun, sehingga akan destruktif jika targetnya adalah root `/`. Silahkan kunjungi [link ini](https://serverfault.com/questions/337082/how-do-i-prevent-accidental-rm-rf) untuk informasi lebih lanjut.
+
 ### > sudo
 
 <ArrowLink href='https://man7.org/linux/man-pages/man8/sudo.8.html'>
   reference
 </ArrowLink>
 
-Command *s*uper *u*ser _do_ digunakan untuk menjalankan command atau mengakses file yang dimiliki oleh _root user_. Jika kita memang sudah login dengan root user maka tidak perlu menggunakan command ini. Tapi sebaiknya kita jangan menggunakan root user untuk penggunaan sehari-hari karena alasan keamanan.
+Command **s**uper**u**ser **do** digunakan untuk menjalankan command atau mengakses file yang dimiliki oleh _root user_. Jika kita memang sudah login dengan root user maka tidak perlu menggunakan command ini. Tapi sebaiknya kita jangan menggunakan root user untuk penggunaan sehari-hari karena alasan keamanan.
 
 ```bash
 sudo cat /etc/shadow
