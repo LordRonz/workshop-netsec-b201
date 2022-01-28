@@ -55,27 +55,27 @@ const Home: NextPage = () => {
     <>
       <Seo />
       <main>
-        <section className='lg:grid-cols-[auto,250px] lg:grid lg:gap-8'>
-          <div className='py-8 bg-black space-y-4 flex justify-center'>
-            <article className='mdx prose transition-colors dark:prose-invert'>
+        <div className='bg-black'>
+          <section className='lg:grid-cols-[auto,250px] lg:grid lg:gap-8'>
+            <article className='mdx prose mx-auto mt-4 w-fulltransition-colors dark:prose-invert'>
               <MDXProvider components={components}>
                 <IndexMd />
               </MDXProvider>
             </article>
-          </div>
-          <aside className='py-4'>
-            <div className='sticky top-36'>
-              <TableOfContents
-                toc={toc}
-                minLevel={minLevel}
-                activeSection={activeSection}
-              />
-            </div>
-          </aside>
-        </section>
-        <figure className='mt-12 py-8 px-20'>
-          <Comment />
-        </figure>
+            <aside className='py-4'>
+              <div className='sticky top-36'>
+                <TableOfContents
+                  toc={toc}
+                  minLevel={minLevel}
+                  activeSection={activeSection}
+                />
+              </div>
+            </aside>
+          </section>
+          <figure className='mt-12 py-8 px-20'>
+            <Comment />
+          </figure>
+        </div>
       </main>
     </>
   );
