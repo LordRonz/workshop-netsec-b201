@@ -55,7 +55,7 @@ const Home: NextPage = () => {
     <>
       <Seo />
       <main>
-        <div className='bg-black'>
+        <div className='bg-black max-w-[68.75rem] mx-auto w-11/12'>
           <section className='lg:grid-cols-[auto,250px] lg:grid lg:gap-8'>
             <article className='mdx prose mx-auto mt-4 w-fulltransition-colors dark:prose-invert'>
               <MDXProvider components={components}>
@@ -72,7 +72,7 @@ const Home: NextPage = () => {
               </div>
             </aside>
           </section>
-          <figure className='mt-12 py-8 px-20'>
+          <figure className='mt-12'>
             <Comment />
           </figure>
         </div>
