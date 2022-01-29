@@ -1,5 +1,6 @@
-import { MDXProvider, MDXProviderComponentsProp } from '@mdx-js/react';
-import { NextPage } from 'next';
+import type { MDXProviderComponentsProp } from '@mdx-js/react';
+import { MDXProvider } from '@mdx-js/react';
+import type { NextPage } from 'next';
 import Image from 'next/image';
 import { useEffect, useState } from 'react';
 
@@ -7,9 +8,8 @@ import Accent from '@/components/Accent';
 import Button from '@/components/buttons/Button';
 import Comment from '@/components/content/Comment';
 import CustomCode, { Pre } from '@/components/content/CustomCode';
-import TableOfContents, {
-  HeadingScrollSpy,
-} from '@/components/content/TableOfContents';
+import type { HeadingScrollSpy } from '@/components/content/TableOfContents';
+import TableOfContents from '@/components/content/TableOfContents';
 import ArrowLink from '@/components/links/ArrowLink';
 import CustomLink from '@/components/links/CustomLink';
 import Seo from '@/components/Seo';
