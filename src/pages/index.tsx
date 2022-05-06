@@ -35,12 +35,6 @@ const Home: NextPage = () => {
   const [toc, setToc] = useState<HeadingScrollSpy>();
   const { theme, setTheme } = useTheme();
 
-  const [loaded, setLoaded] = useState(false);
-
-  useEffect(() => {
-    setLoaded(true);
-  }, []);
-
   const minLevel =
     toc?.reduce((min, item) => (item.level < min ? item.level : min), 10) ?? 0;
 
@@ -81,7 +75,7 @@ const Home: NextPage = () => {
               </div>
             </aside>
             <div className='sticky bottom-0 left-full h-16 w-16'>
-              {loaded && <ColorModeToggle value={theme} onChange={setTheme} />}
+              <ColorModeToggle value={theme} onChange={setTheme} />
             </div>
           </section>
           <figure className='mt-12'>
