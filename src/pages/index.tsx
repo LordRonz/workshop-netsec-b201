@@ -2,10 +2,12 @@ import type { MDXProviderComponentsProp } from '@mdx-js/react';
 import { MDXProvider } from '@mdx-js/react';
 import type { NextPage } from 'next';
 import Image from 'next/image';
+import { useTheme } from 'next-themes';
 import { useEffect, useState } from 'react';
 
 import Accent from '@/components/Accent';
 import Button from '@/components/buttons/Button';
+import ColorModeToggle from '@/components/ColorModeToggle';
 import Comment from '@/components/content/Comment';
 import CustomCode, { Pre } from '@/components/content/CustomCode';
 import type { HeadingScrollSpy } from '@/components/content/TableOfContents';
@@ -31,6 +33,13 @@ const components: MDXProviderComponentsProp = {
 const Home: NextPage = () => {
   const activeSection = useScrollspy();
   const [toc, setToc] = useState<HeadingScrollSpy>();
+  const { theme, setTheme } = useTheme();
+
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    setLoaded(true);
+  }, []);
 
   const minLevel =
     toc?.reduce((min, item) => (item.level < min ? item.level : min), 10) ?? 0;
@@ -55,7 +64,7 @@ const Home: NextPage = () => {
     <>
       <Seo />
       <main>
-        <div className='bg-black max-w-[68.75rem] mx-auto w-11/12'>
+        <div className='max-w-[68.75rem] mx-auto w-11/12'>
           <section className='lg:grid-cols-[auto,250px] lg:grid lg:gap-8'>
             <article className='mdx prose mx-auto mt-4 w-full transition-colors dark:prose-invert'>
               <MDXProvider components={components}>
@@ -71,9 +80,12 @@ const Home: NextPage = () => {
                 />
               </div>
             </aside>
+            <div className='sticky bottom-0 left-full h-16 w-16'>
+              {loaded && <ColorModeToggle value={theme} onChange={setTheme} />}
+            </div>
           </section>
           <figure className='mt-12'>
-            <Comment />
+            <Comment theme={theme} />
           </figure>
         </div>
       </main>

@@ -1,16 +1,33 @@
 import Giscus from '@giscus/react';
+import { useEffect, useState } from 'react';
 
-const Comment = (): JSX.Element => (
-  <Giscus
-    repo='LordRonz/workshop-netsec-b201'
-    repoId='R_kgDOGrOWXA'
-    category='Announcements'
-    categoryId='DIC_kwDOGrOWXM4CA1T6'
-    mapping='pathname'
-    reactionsEnabled='0'
-    emitMetadata='0'
-    theme='dark'
-  />
-);
+type CommentProps = {
+  theme?: string;
+};
+
+const Comment = ({ theme }: CommentProps) => {
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
+  return (
+    <Giscus
+      repo='LordRonz/dtk-class-helper'
+      repoId='R_kgDOGmgLYw='
+      category='Announcements'
+      categoryId='DIC_kwDOGmgLY84CAmjr'
+      mapping='pathname'
+      reactionsEnabled='0'
+      emitMetadata='0'
+      theme={theme}
+    />
+  );
+};
 
 export default Comment;
