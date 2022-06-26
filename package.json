@@ -48,7 +48,7 @@
     "@types/react": "18.0.8",
     "@types/react-copy-to-clipboard": "^5.0.2",
     "@typescript-eslint/eslint-plugin": "^5.27.0",
-    "@typescript-eslint/parser": "^5.27.0",
+    "@typescript-eslint/parser": "^5.29.0",
     "autoprefixer": "^10.4.7",
     "cypress": "^10.2.0",
     "eslint": "^8.17.0",
